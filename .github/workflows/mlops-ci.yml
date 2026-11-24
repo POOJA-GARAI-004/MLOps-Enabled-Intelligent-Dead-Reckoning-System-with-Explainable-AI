@@ -1,0 +1,40 @@
+
+name: IDR MLOps CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Check Python syntax
+        run: |
+          python -m compileall -q src mlops train.py
+
+      - name: Verify MLOps scripts
+        run: |
+          test -f mlops/explain_shap.py
+          test -f mlops/explain_lime.py
+          test -f mlops/explain_integrated_gradients.py
+          test -f mlops/monitor_drift.py
+          test -f mlops/log_existing_model.py
+          test -f mlops/register_model.py
+
+      - name: Verify model and configuration
+        run: |
+          test -f configs/adapter_cnn.yaml
+          test -f results/models/adapter_cnn_v1.pt
