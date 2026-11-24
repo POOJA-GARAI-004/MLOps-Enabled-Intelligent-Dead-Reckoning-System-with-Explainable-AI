@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy
+matplotlib
+pyyaml
+scikit-learn
+pytest
+filterpy
+ahrs
+torch>=2.5,<3
+networkx>=3,<4
