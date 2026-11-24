@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Intelligent Dead Reckoning
 
 Smartphone-based GNSS-denied navigation system for SIH.
@@ -473,8 +473,6 @@ READY FOR BASIC INS
 
 The entire team is currently focused on understanding the dataset and preprocessing decisions before splitting into separate implementation modules.
 
-**Current stage: Phase 1 — Dataset Understanding & Preprocessing**
-=======
 # MLOps-Enabled-Intelligent-Dead-Reckoning-System-with-Explainable-AI
 MLOps-enabled Intelligent Dead Reckoning System with Explainable AI, MLflow, SHAP, LIME, Integrated Gradients and automated CI.
 >>>>>>> 9988e62c0c6c7e509fb53edb57af71c60c0e262b
